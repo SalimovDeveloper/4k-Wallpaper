@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment"
+    tools:openDrawer="start"
+    >
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#011627"
+        >
+
+        <LinearLayout
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/my_tablayout"
+            >
+
+            <ImageView
+                android:id="@+id/menu_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_menu"
+                android:padding="10dp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:text="@string/home"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="start|center"
+                />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/ic_search"
+                android:padding="10dp"
+                />
+
+        </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/my_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            app:tabIndicator="@null"
+            app:tabMode="scrollable"
+            app:layout_constraintTop_toBottomOf="@id/my_toolbar"
+            app:layout_constraintBottom_toTopOf="@id/my_viewPager"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/my_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/my_tablayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            app:layout_constraintWidth_percent="0.90"
+            android:background="@color/white"
+            android:alpha="0.3"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintVertical_bias="0.9"
+            app:layout_constraintTop_toTopOf="@id/my_viewPager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="75dp"
+                app:layout_constraintWidth_percent=".75"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="25dp"
+                app:layout_constraintVertical_bias=".90"
+                app:layout_constraintTop_toTopOf="@id/my_viewPager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent">
+
+                <ImageView
+                    android:id="@+id/navigation_home"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/home_button"
+                    android:layout_gravity="center_vertical"
+                    android:focusable="true" />
+
+                <ImageView
+                    android:id="@+id/navigation_star"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/starbutton"
+                    android:layout_gravity="center_vertical"
+                    android:focusable="true" />
+
+                <ImageView
+                    android:id="@+id/navigation_random"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/refreshbutton"
+                    android:layout_gravity="center_vertical"
+                    android:focusable="true" />
+
+                <ImageView
+                    android:id="@+id/navigation_like"
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:src="@drawable/likedbutton"
+                    android:layout_gravity="center_vertical"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#011627"
+        app:itemVerticalPadding="15dp"
+        app:itemTextColor="@color/white"
+        app:itemTextAppearance="?android:attr/textAppearanceLarge"
+        app:itemIconTint="#C44EFD"
+        app:itemIconSize="30dp"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/my_header"
+        app:menu="@menu/my_menu"
+        android:focusable="true" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

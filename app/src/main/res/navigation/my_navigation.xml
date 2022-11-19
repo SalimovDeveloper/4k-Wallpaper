@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.programmer710.a4kwallpapers.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_likeFragment"
+            app:destination="@id/likeFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="uz.programmer710.a4kwallpapers.fragments.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_clickFonFragment"
+            app:destination="@id/clickFonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/likeFragment"
+        android:name="uz.programmer710.a4kwallpapers.fragments.LikeFragment"
+        android:label="fragment_like"
+        tools:layout="@layout/fragment_like" >
+        <action
+            android:id="@+id/action_likeFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
+        <action
+            android:id="@+id/action_likeFragment_to_clickFonFragment"
+            app:destination="@id/clickFonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clickFonFragment"
+        android:name="uz.programmer710.a4kwallpapers.fragments.ClickFonFragment"
+        android:label="fragment_click_fon"
+        tools:layout="@layout/fragment_click_fon" />
+</navigation>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">4K Wallpapers</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="popular">Popular</string>
+    <string name="random">Random</string>
+    <string name="like">like</string>
+    <string name="history">History</string>
+    <string name="about">About</string>
+    <string name="all">all</string>
+</resources>
